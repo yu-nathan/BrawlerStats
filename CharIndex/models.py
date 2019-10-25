@@ -4,12 +4,13 @@ from django.utils import timezone
 # Create your models here.
 class Character(models.Model):
     char_name = models.CharField(max_length=200)
+    char_picture = models.ImageField(upload_to)
 
     def __str__(self):
         return self.char_name
 
 class Stats(models.Model):
-    character = models.ForeignKey(Character, on_delete=models.CASCADE)
+    character = models.OneToOneField(Character, on_delete=models.CASCADE)
     rarity = models.CharField(max_length=200)
     movement_speed = models.IntegerField(default=0)
     health = models.IntegerField(default=0)
