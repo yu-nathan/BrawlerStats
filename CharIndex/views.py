@@ -15,9 +15,10 @@ class CharacterDetailsView(generic.DetailView):
         return get_object_or_404(Character, char_name=self.kwargs['char_name'],
             char_origin=self.kwargs['char_origin'])
 
-class SearchResultsView(generic.DetailView):
+class SearchResultsView(generic.ListView):
     model = Character
-    template_name = 'charIndex/search_results.html'
+    template_name = 'CharacterNexus/search_results.html'
+    context_object_name = 'relevant_characters'
 
     def get_queryset(self):
         query = self.request.GET.get('q')

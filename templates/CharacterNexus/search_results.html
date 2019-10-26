@@ -12,8 +12,8 @@
         </form>
         <input type="submit" value="search">
 
-        {% if newest_characters_list %}
-            {% for character in newest_characters_list %}
+        {% if relevant_characters %}
+            {% for character in relevant_characters %}
             <a href="{% url 'charIndex:detail' character.char_origin  character.char_name %}">
                 <img src="{{ character.char_img.url }}">
                 <figcaption>
@@ -22,7 +22,7 @@
             </a>
             {% endfor %}
         {% else %}
-            <p>There are no characters in the nexus yet.</p>
+            <p>Your search returned none of the characters in the nexus.</p>
         {% endif %}
     </body>
 </html>

@@ -32,7 +32,6 @@ class Stats(models.Model):
     super_damage_per_bullet = models.IntegerField('Super damage per bullet', null=True)
 
     def get_fields(self):
-        print(Stats._meta.fields[0].__dict__.keys())
         return [(field.verbose_name, field.value_to_string(self)) for field in Stats._meta.fields]
 
     def __str__(self):
