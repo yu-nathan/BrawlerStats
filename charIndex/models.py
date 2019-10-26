@@ -1,11 +1,11 @@
 from django.db import models
-from django.utils import timezone
+
 
 # Create your models here.
 class Character(models.Model):
     # Create the path for the character image that is to be uploaded.
-    def get_image_path(instance, filename):
-        return '{0}/{1}'.format(instance.char_origin, filename)
+    def get_image_path(self, filename):
+        return '{0}/{1}'.format(self.char_origin, filename)
 
     char_name = models.CharField('character name', max_length=200)
     char_img = models.ImageField(upload_to=get_image_path, blank=False, null=True)
@@ -14,6 +14,7 @@ class Character(models.Model):
 
     def __str__(self):
         return self.char_name
+
 
 class Stats(models.Model):
     character = models.OneToOneField(

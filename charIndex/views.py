@@ -5,15 +5,19 @@ from django.db.models import Q
 
 from .models import Character, Stats
 
+
 # Create your views here.
 class CharacterDetailsView(generic.DetailView):
     model = Stats
     template_name = 'CharacterNexus/detail.html'
     context_object_name = 'character'
 
-    def get_object(self):
-        return get_object_or_404(Character, char_name=self.kwargs['char_name'],
+    def get_object(self, **kwargs):
+        return get_object_or_404(
+            Character,
+            char_name=self.kwargs['char_name'],
             char_origin=self.kwargs['char_origin'])
+
 
 class SearchResultsView(generic.ListView):
     model = Character
@@ -22,7 +26,7 @@ class SearchResultsView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        if (len(query) > 4):
+        if len(query) > 4:
             object_list = Character.objects.filter(
                 Q(char_name__icontains=query) | Q(char_origin__icontains=query)
             )
