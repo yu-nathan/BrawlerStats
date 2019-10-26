@@ -3,8 +3,12 @@ from django.utils import timezone
 
 # Create your models here.
 class Character(models.Model):
+    def get_image_path(instance, filename):
+        return 'character_{0}/{1}'.format(instance.id, filename)
+
     char_name = models.CharField(max_length=200)
-    char_picture = models.ImageField(upload_to)
+    char_img = models.ImageField(upload_to=get_image_path, blank=False, null=True)
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.char_name

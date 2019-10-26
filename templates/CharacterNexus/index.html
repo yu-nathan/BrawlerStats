@@ -2,8 +2,19 @@
 <html>
     <header>
         <title>CharacterNexus</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
     </header>
     <body>
-        <h1>Homepage</h1>
+        {% if newest_characters_list %}
+            <ul>
+            {% for character in newest_characters_list %}
+                <li><img src="{{ character.char_img.url }}">{{ character.char_name }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no characters in the nexus yet.</p>
+        {% endif %}
     </body>
 </html>
