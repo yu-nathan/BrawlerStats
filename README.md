@@ -3,11 +3,12 @@ Web app to show game character stats and allow users to add and update character
 
 # Set Up Virtual Environment
 
-    py -m venv venv
+    python3 -m venv venv
     ./venv/Scripts/activate
-    pip install -r requirements.txt
+    python3 -m pip install -r requirements.txt
 
 # Run
+python3 manage.py runserver
 
 **TODO**
 - Add navbar
