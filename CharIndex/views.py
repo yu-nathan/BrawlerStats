@@ -22,6 +22,12 @@ class SearchResultsView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return Character.objects.filter(
-            Q(char_name__icontains=query) | Q(char_origin__icontains=query)
-        )
+        if (len(query) > 4):
+            object_list = Character.objects.filter(
+                Q(char_name__icontains=query) | Q(char_origin__icontains=query)
+            )
+        else:
+            object_list = Character.objects.filter(
+                Q(char_name__icontains=query)
+            )
+        return object_list
