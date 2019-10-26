@@ -8,11 +8,14 @@
     </header>
     <body>
         {% if newest_characters_list %}
-            <ul>
             {% for character in newest_characters_list %}
-                <li><img src="{{ character.char_img.url }}">{{ character.char_name }}</li>
+            <a href="{% url 'charIndex:detail' character.char_origin  character.char_name %}">
+                <img src="{{ character.char_img.url }}">
+                <figcaption>
+                    {{ character.char_name }}
+                </figcaption>
+            </a>
             {% endfor %}
-            </ul>
         {% else %}
             <p>There are no characters in the nexus yet.</p>
         {% endif %}
