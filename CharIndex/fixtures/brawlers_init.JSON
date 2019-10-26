@@ -1,0 +1,10 @@
+[
+    {
+        "model": "charIndex.Character",
+        "pk": 1,
+        "fields": {
+            "char_name": "Shelly"
+            "char_img": "../../media/"
+        }
+    }
+]
