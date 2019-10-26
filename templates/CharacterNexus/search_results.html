@@ -4,10 +4,19 @@
         <title>CharacterNexus</title>
         {% load static %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'charIndex/style.css' %}">
     </header>
     <body>
-        <form action="{% url 'charIndex:search_results' %}" method="get">
+        <!-- Navbar for the webpage -->
+        <ul>
+            <li><a href="{% url 'homeSite:index' %}">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+        </ul>
+
+        <!-- Search bar -->
+        <form action="{% url 'charIndex:search_results' %}" autocomplete="off" method="get">
             <input name="q" type="text" placeholder="Search...">
             <input type="submit" value="Search">
         </form>
