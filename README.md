@@ -10,7 +10,7 @@ Web app to show game character stats and allow users to add and update character
 # Run
 python3 manage.py runserver
 
-#TODO
+# TODO
 - Add navbar
 - Add footer
 - Add functionality to add new characters
