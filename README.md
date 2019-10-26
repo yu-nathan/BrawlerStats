@@ -8,3 +8,9 @@ Web app to show game character stats and allow users to add and update character
     pip install -r requirements.txt
 
 # Run
+
+**TODO**
+- Add navbar
+- Add footer
+- Add functionality to add new characters
+- Improve the HTML, CSS, JS
