@@ -8,7 +8,7 @@ from .models import Character, Stats
 # Create your views here.
 class CharacterDetailsView(generic.DetailView):
     model = Stats
-    template_name = 'charIndex/detail.html'
+    template_name = 'CharacterNexus/detail.html'
     context_object_name = 'character'
 
     def get_object(self):

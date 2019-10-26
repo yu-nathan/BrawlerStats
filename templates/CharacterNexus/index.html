@@ -24,7 +24,7 @@
         {% if newest_characters_list %}
             {% for character in newest_characters_list %}
             <a href="{% url 'charIndex:detail' character.char_origin  character.char_name %}">
-                <img src="{{ character.char_img.url }}">
+                <img src="{{ character.char_img.url }}" class="char_img">
                 <figcaption>
                     {{ character.char_name }}
                 </figcaption>

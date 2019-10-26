@@ -24,7 +24,7 @@
         {% if relevant_characters %}
             {% for character in relevant_characters %}
             <a href="{% url 'charIndex:detail' character.char_origin  character.char_name %}">
-                <img src="{{ character.char_img.url }}">
+                <img src="{{ character.char_img.url }}" class="char_img">
                 <figcaption>
                     {{ character.char_name }}
                 </figcaption>
