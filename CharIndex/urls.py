@@ -20,5 +20,6 @@ from . import views
 
 app_name = 'charIndex'
 urlpatterns = [
-    path('<str:char_origin>/<str:char_name>/', views.CharacterDetails.as_view(), name='detail'),
+    path('<str:char_origin>/<str:char_name>/', views.CharacterDetailsView.as_view(), name='detail'),
+    path('search/', views.SearchResultsView.as_view(), name='search_results'),
 ]

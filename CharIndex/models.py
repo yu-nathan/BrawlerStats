@@ -3,6 +3,7 @@ from django.utils import timezone
 
 # Create your models here.
 class Character(models.Model):
+    # Create the path for the character image that is to be uploaded.
     def get_image_path(instance, filename):
         return '{0}/{1}'.format(instance.char_origin, filename)
 
