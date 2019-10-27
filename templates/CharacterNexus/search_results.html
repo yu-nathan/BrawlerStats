@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <header>
-        <title>CharacterNexus</title>
-        {% load static %}
+{% extends "CharacterNexus/base.html" %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'charIndex/style.css' %}">
-    </header>
-    <body>
-        <!-- Navbar for the webpage -->
-        <ul>
-            <li><a href="{% url 'homeSite:index' %}">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li><a href="about.asp">About</a></li>
-        </ul>
+{% block header %}
+    <title>CharacterNexus</title>
+{% endblock %}
 
-        <!-- Search bar -->
-        <form action="{% url 'charIndex:search_results' %}" autocomplete="off" method="get">
-            <input name="q" type="text" placeholder="Search...">
-            <input type="submit" value="Search">
-        </form>
-
-        {% if relevant_characters %}
-            {% for character in relevant_characters %}
+{% block content %}
+    {% if relevant_characters %}
+        {% for character in relevant_characters %}
             <a href="{% url 'charIndex:detail' character.char_origin  character.char_name %}">
                 <img src="{{ character.char_img.url }}" class="char_img">
                 <figcaption>
                     {{ character.char_name }}
                 </figcaption>
             </a>
-            {% endfor %}
-        {% else %}
-            <p>Your search returned none of the characters in the nexus.</p>
-        {% endif %}
-    </body>
-</html>
+        {% endfor %}
+    {% else %}
+        <p>Your search returned none of the characters in the nexus.</p>
+    {% endif %}
+{% endblock %}

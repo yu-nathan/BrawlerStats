@@ -2,6 +2,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.db.models import Q
+from django.contrib.auth import views as auth_views
 
 from .models import Character, Stats
 
@@ -35,3 +36,8 @@ class SearchResultsView(generic.ListView):
                 Q(char_name__icontains=query)
             )
         return object_list
+
+# class TeamBuilderView(generic.ListView):
+#    model = Character
+#    template_name = 'CharacterNexus/team_builder.html'
+

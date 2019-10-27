@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        {% block header %}
+        {% endblock %}
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'charIndex/style.css' %}">
+
+    </header>
+    <body>
+        <!-- Navbar for the webpage -->
+        <ul>
+            <li><a href="{% url 'homeSite:index' %}">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+        </ul>
+
+        <a href="{% url 'login' %}?next={{ request.path|urlencode }}">Login</a>
+
+        {% block search_bar %}
+        <!-- Search bar -->
+        <form action="{% url 'charIndex:search_results' %}" autocomplete="off" method="get">
+            <input name="q" type="text" placeholder="Search...">
+            <input type="submit" value="Search">
+        </form>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

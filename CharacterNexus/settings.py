@@ -107,6 +107,9 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL= "/media/"
 
+# Login redirect url
+LOGIN_REDIRECT_URL = ''
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
