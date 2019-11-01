@@ -108,7 +108,8 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 MEDIA_URL= "/media/"
 
 # Login redirect url
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'homeSite:index'
+LOGOUT_REDIRECT_URL = 'homeSite:index'
 
 
 # Internationalization
