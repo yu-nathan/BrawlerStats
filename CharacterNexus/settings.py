@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'charIndex.apps.CharindexConfig',
     'homeSite.apps.HomesiteConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -110,6 +111,10 @@ MEDIA_URL= "/media/"
 # Login redirect url
 LOGIN_REDIRECT_URL = 'homeSite:index'
 LOGOUT_REDIRECT_URL = 'homeSite:index'
+
+# Emails
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 
 # Internationalization
