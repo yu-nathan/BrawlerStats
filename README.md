@@ -8,10 +8,11 @@ Web app to show game character stats and allow users to add and update character
     python3 -m pip install -r requirements.txt
 
 # Run
-python3 manage.py runserver
+
+    python3 manage.py runserver
 
 # TODO
-- Add navbar
+- Add navbar -- DONE
 - Add footer
 - Add functionality to add new characters
 - Improve the HTML, CSS, JS
