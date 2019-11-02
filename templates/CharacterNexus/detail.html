@@ -8,10 +8,12 @@
     <h1>{{ Character.char_name }}</h1>
     <img src="{{ character.char_img.url }}" class="char_img">
     <figcaption>{{ character.char_name }}</figcaption>
-    {% for name, value in character.stats.get_fields|slice:"1:" %}
-        {% if value %}
-            {{ name }} => {{ value }}
-            <br>
-        {% endif %}
-    {% endfor %}
+    <p>
+        {% for name, value in character.stats.get_fields|slice:"1:" %}
+            {% if value %}
+                {{ name }} => {{ value }}
+                <br>
+            {% endif %}
+        {% endfor %}
+    </p>
 {% endblock %}

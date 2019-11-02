@@ -1,3 +1,4 @@
+<!-- templates/CharacterNexus/base.html -->
 <!DOCTYPE html>
 <html>
     <header>
@@ -18,13 +19,17 @@
         </ul>
 
         {% block login %}
+
         <!-- Login button -->
         {% if user.is_authenticated %}
-            Hi {{ user.username }}!
+            <p>Hi {{ user.username }}!</p>
             <p><a href="{% url 'logout' %}">Logout</a></p>
         {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'accounts:signup' %}">Sign Up</a>
+            <p>
+                <a href="{% url 'login' %}">Login</a>
+                 /
+                <a href="{% url 'accounts:signup' %}">Sign Up</a>
+            </p>
         {% endif %}
         {% endblock %}
 
