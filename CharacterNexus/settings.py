@@ -106,15 +106,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Default media directory
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 
-MEDIA_URL= "/media/"
+MEDIA_URL= '/media/'
 
 # Login redirect url
 LOGIN_REDIRECT_URL = 'homeSite:index'
 LOGOUT_REDIRECT_URL = 'homeSite:index'
 
 # Emails
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
+# Custom User model
+# AUTH_USER_MODEL = 'accounts.user'
 
 
 # Internationalization
